@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크 및 이미지 HTML 요소</title>
+</head>
+<body>
+    <!-- <a>: 하이퍼링크를 사용하기 위한 요소 href 속성에 링크의 이동 경로를 작성-->
+    <!--문자열 작업시 "" 안적어도 됨, 띄어쓰기 포함 문자열은 포함 -->
+    <!--HTML의 속성 값으로 문자열을 지정할 때 ""가 없어도 되지만 예기치 못한 문제 발생할 수 있음-->    
+    <a href=https://naver.com>Naver</a>
+    <!-- a 요소의 href속성 값으로 URL 주소 뿐만 아니라 파일명, HTML의 ID값도 올 수 있음-->
+    <a href="./link_next.html">다음 페이지</a>
+    <a href="#section1">Section 1으로 이동</a>
+
+    <div style="height: 1000px; background-color: rgba(0, 0, 0, 0.2);"></div>
+    <h1 id="section1">Section 1</h1>
+    <div style="height: 1000px; background-color: rgba(0, 0, 0, 0.2);"></div>
+    <!-- <img>:이미지를 페이지에 출력하기 위한 요소 src 속성으로 출력할 파일의 경로를 지정-->
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMTBfNiAg%2FMDAxNzA0ODU1MzQ5ODc2.ydfWF9oJQGwpklHGpXnmnOdcX7U-SK_5WSP_hko_nJwg.Ox50DPkum67jB-7XIoETlANPT3ZaMa0KnJdkQdILcrsg.PNG.1123hjk%2Fimage.png&type=a340"/>
+
+    <img src="../resource/제네시스.jpg"/>
+
+    <!-- 미디어 요소는 alt 속성에 설명을 작성하는 것을 권고-->
+    <!-- 이미지링크에 에러가 있을 시 뒤에 속성 설명이 출력됨.-->
+    <img src="../resource/제네시스.jp"alt="gv80 외형사진"/>
+
+</body>
+</html>
