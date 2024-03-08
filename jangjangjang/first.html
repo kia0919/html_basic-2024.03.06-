@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최종정리</title>
+</head>
+<body>
+    <h1>My Homepage</h1> <!-- 가장 큰 제목은 my homepage로 저장-->
+    <img src="img/ta.jpg"> <!-- 이미지는 img풀더에 있는 이미지 사용-->
+    <p>컴퓨터 프로그래밍 하는 나의 모습</p> <!-- 단락에는 설명글-->
+    <pre>이건 내가 입력한 대로 
+        나옴
+    </pre> <!-- pre 태그는 내가 입력 한 그대로 나온다, 줄바꿈 br을 설정 안해도 입력할 때 줄바꿔서 입력을 했으면 그대로 나온다 -->
+    <hr /> <!-- 수평선을 그리는 태그 -->
+    <h2>현재 학습하고 있는 과목</h2> <!-- 두번째 제목 설정-->
+    <ul> <!-- 순서없이 리스트 만들때 쓰는 태그 ul-->
+        <li> C 언어 </li> 
+        <li> JAVA 언어</li> 
+        <li> 웹프로그래밍 </li>
+    </ul>
+    <ol> <!-- 순서를 설정할려면 ol을 태그를 사용-->
+        <li>파묘</li>
+        <li>타이타닉</li>                <!-- 서울의 봄 링크태그 마지막에 target="_blank"를 작성함으로 써 새로운 윈도우를 오픈한다,  -->
+        <li>서울의 봄 <a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&x_csa=%7B%22isOpen%22%3Atrue%7D&pkid=68&os=25517275&qvt=0&query=%EC%98%81%ED%99%94%20%EC%84%9C%EC%9A%B8%EC%9D%98%20%EB%B4%84%20%EC%A0%95%EB%B3%B4" target="_blank">클릭하면 새로운 윈도우가 열림</a></li>
+        <li>윙카<a href="https://search.naver.com/search.naver?sm=tab_sug.top&where=nexearch&ssc=tab.nx.all&query=%EC%9C%99%EC%B9%B4+%EC%98%81%ED%99%94&oquery=%EC%9C%99%EC%B9%B4&tqi=iPiHQsqo1SCss5NYkzdssssstMK-262934&acq=%EC%9C%99%EC%B9%B4&acr=1&qdt=0" target="_self">클릭하면 현재 페이지 에서 열림</a></li>
+                                        <!-- 윙카 링크 태그는 마지막에 target="_self"를 사용해서 현재 페이지에서 윈도우가 열린다. -->
+    </ol>
+    <dl> <!-- dl태그는 정의 리스트 -->
+        <dt>파묘</dt> <!-- dt태그로 파묘 단어를 저장하면-->
+        <dd>- 이번에 개봉한 영화</dd> <!--dd태그로 단어를 설명한다-->
+    </dl>
+    <h3> 이번 학기 시간표 </h3>
+    <table border="1"> <!--테이블 두께를 어느정도 할거냐 1로 설정, 테이블의 속성 -->
+        <caption> 시간표 </caption> <!-- 테이블 제목 같은 느낌 <h1>이랑 비슷하다 -->
+        <thead> <!-- 테이블 헤드 머리글 이다-->
+            <tr>
+                <th>&nbsp;</th>
+                <th>월요일</th> <!--head에 있어서 th 태그를 쓴다-->
+                <th>화요일</th>
+                <th>수요일</th>
+            </tr>
+        </thead>
+        <tbody> <!-- 테이블 바디 본문 이다 -->
+            <tr> <!-- 테이블 행-->
+                <td>1교시</td> <!-- 테이블 열 -->
+                <td>C언어</td>  <!-- body에 있어서 td태그를 쓴다-->
+                <td>JAVA 언어</td>
+                <td>JAVA 언어</td>
+            </tr>
+            <tr>
+                <td>2교시</td>
+                <td>C언어</td>
+                <td>웹 프로그래밍 언어</td>
+                <td>웹 프로그래밍 언어</td>
+            </tr>
+        </tbody>
+    </table> <!-- 현재 여기서 사용안한 tfoot 이라는 태그는 바닥글을 지정하기 위한 태그이다. -->
+</body>
+</html>
