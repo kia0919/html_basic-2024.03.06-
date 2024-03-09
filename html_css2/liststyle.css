@@ -1,0 +1,11 @@
+ul.id {
+    list-style: circle;
+}
+
+ul.is {
+    list-style: disc;
+}
+
+ul.ie {
+    list-style: square;
+}

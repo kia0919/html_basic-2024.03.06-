@@ -1,0 +1,17 @@
+#se {
+    border-style: solid;
+    border-color: green;
+    border-width: thick;
+}
+
+#sw {
+    border-style: solid;
+    border-color: red;
+    border-width: medium;
+}
+
+#sd {
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+}

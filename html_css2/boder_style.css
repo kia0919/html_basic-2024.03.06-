@@ -1,0 +1,33 @@
+#q {
+    border-style: none;
+}
+#w {
+    border-style: dotted;
+}
+#e {
+    border-style: solid;
+}
+
+#r {
+    border-style: dashed;
+}
+
+#a {
+    border-style: double;
+}
+
+#s {
+    border-style: groove;
+}
+
+#d {
+    border-style: ridge;
+}
+
+#z {
+    border-style: inset;
+}
+
+#x {
+    border-style: outset;
+}
