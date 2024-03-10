@@ -1,0 +1,46 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+#Q{
+    background-color: gray;
+    padding: 35px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 60%;
+}
+#w{
+    font-size: 15;
+    color: red;
+}
+#e{
+    font-size: 10pt;
+    float: left;
+}
+#T{
+    margin-left:250px;
+    text-align: center;
+    width: 700px ;
+    border-collapse: collapse;
+}
+td{
+    background-color: white;
+}
+
+#a{
+    background-color: greenyellow;
+    margin: 20px auto;
+    height: 500px;
+    padding: 35px;
+    width: 60%;
+    position: relative;
+}
+#b{
+    background-color: skyblue;
+    padding: 15px;
+    width: 17%;
+    top: 10px;
+    left: 10px;
+    position:absolute;
+    border: 1px solid brown;
+}
