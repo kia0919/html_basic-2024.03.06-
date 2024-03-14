@@ -1,0 +1,17 @@
+@font-face {
+    font-family: kakaoRegular;
+    src:url(../resource/KakaoRegular.ttf);
+}
+
+@font-face {
+    font-family: kakaoBold;
+    src:url(../resource/KakaoBold.ttf);
+}
+
+.kakao-regular-font {
+    font-family: 'KakaoRegular', sans-serif;
+}
+
+.kakao-bold-font {
+    font-family: 'KakaoBold', sans-serif;
+}
