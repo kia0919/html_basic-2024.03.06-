@@ -71,6 +71,7 @@
     width: 56px;
     height: 56px;
     border-radius: 12px;
+    background-size: 100%;
 }
 
 .icon-button:hover {
@@ -103,7 +104,7 @@
 
     .kakaotalk {
         background-image: url(https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/kakaoService/c9424536018c00001.png);
-        background-size: 100%;
+
     }
 
     .daum {
