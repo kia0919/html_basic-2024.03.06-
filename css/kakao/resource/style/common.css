@@ -15,46 +15,46 @@
     }
 
     body {
-        display: flex;
-        justify-content: center;
-        min-width: 1712px;
+        display: flex;  /*가로 방향으로 배치*/
+        justify-content: center; /*justify -content(가로축 - 중심축)아이템들을 가운데로 정렬*/
+        min-width: 1712px;  /*컨텐츠의 최소 넓이*/
     }
 
 #wrapper {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+    flex-shrink: 0; /*아이템의 너비감소 비율*/
+    display: flex;  /*부모 요소의 display 속성에 flex를 지정(flexbox지정)*/
+    flex-direction: column; /*위에서 아래로 수직 배치*/
+    gap: 60px;  /*각 컨텐츠와의 간격*/
 
    
-    width: 1712px;   
+    width: 1712px; /*넓이 */
 }
 
 .title-box {
-    font-size: 52px;
-    line-height: 78px;
-    letter-spacing:  -1px;
+    font-size: 52px; /*title-box요소의 글자 사이즈*/
+    line-height: 78px; /*title-box요소의 줄 높이*/
+    letter-spacing:  -1px; /*글자 사이 간격*/
     font-family: "kakaoBold", sans-serif;
-    font-weight: 400px;
+    font-weight: 400px; /*글자 굵기*/
 }
 
-.title-box::before {
+.title-box::before { /*title-box 앞에다 해당 코드를 삽입*/
     background-image: url(https://www.kakaocorp.com/page/ico_tit_service.gif);
     width: 78px;
     height: 78px;
     display: inline-block;  /*한라인을 다 차지하지 않고, 지정한 만큼만 차지할 수 있도록 해줌*/
-    content: "";
+    content: "";    /*추가할 요소*/
     background-size: 100%;   /*블럭 사이즈에 100%맞춤.*/
-    vertical-align: top;
+    vertical-align: top; /*inline요소일때 적응되고, 수직정렬할때 사용한다.*/
 }
 
 .content-card {
-    background-color: rgba(240, 240, 240, 1);
+    background-color: rgba(240, 240, 240, 1);  /*요소에 배경색 지정*/
     border-radius: 24px;    /*모서리 둥글게*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 64px;
+    display: flex; /*가로방향으로 배치*/
+    justify-content: space-between; /*(가로축-중심축)요소들 사이에 동일한 간격을 줌*/
+    align-items: center; /*(세로축-교차축)중앙 위치*/
+    padding: 0px 64px; /*텍스트 라인과 inline과의 간격*/
 }
 
 .content-title {
@@ -70,35 +70,35 @@
 .icon-button {
     width: 56px;
     height: 56px;
-    border-radius: 12px;
+    border-radius: 12px;  /*모서리 둥글게*/
     background-size: 100%;
 }
 
 .icon-button:hover {
-    cursor: pointer;
+    cursor: pointer; /*마우스 커서*/
 }
 
 
 /*Contents Box*/
 .contents-box {
-    display: grid;
-    grid-template: 
-        "comunication busniess"180px
+    display: grid;  /*디스플레이를 2차원 형태의 그리드로*/
+    grid-template: /**-* -columns, *-*-rows, *-*-areas를 한번에 지정하는 단축 속성*/
+        "comunication busniess"180px  /*영역 이름과 행의 크기와 갯수*/
         "life-style shopping" 180px
         "entertainment social" 180px
-        / 1fr 1fr;
+        / 1fr 1fr; /*열의 갯수*/
     gap: 16px;
     }
 
     .more {
         background-color: rgba(0, 0, 0, 0.4);
-        color: rgba(255, 255, 255, 1);
-        text-align: center;
-        line-height: 56px;
+        color: rgba(255, 255, 255, 1); /*글자 색*/
+        text-align: center; /*글자의 위치*/
+        line-height: 56px; /*줄의 높이*/
         font-size: 32px;
 
     }
-    .more:hover {
+    .more:hover {   /*마우스 커서가 해당 요소로 가면 검정색으로 바뀜*/
         background-color: rgba(0, 0, 0, 1);
     }
 
@@ -117,8 +117,8 @@
 
 /* More Box*/
 .more-box {
-    display: flex;
-    justify-content: center;
+    display: flex; /*가로로 배치*/
+    justify-content: center; /*(가로축-중심축)중앙으로 정렬*/
 }
 
 .more-button {
@@ -126,21 +126,21 @@
     height: 76px;
     background-color: rgba(240, 240, 240, 1);
     font-size: 24px;
-    letter-spacing: -0.4px;
-    border-radius: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    letter-spacing: -0.4px; /*글자 사이 간격*/
+    border-radius: 38px;   /*모서리 둥글게*/
+    display: flex;  /*가로로 배치*/
+    justify-content: center; /**가로축-중심축으로 중앙으로 정렬*/
+    align-items: center; /*아이템들을 중심으로 정렬*/
     gap: 4px;
 }
 
 .more-button:hover { /*마우스 커서가 바뀜*/
-    cursor: pointer;
+    cursor: pointer; /*커서모양은 포인터 모양으로*/
 }
 
 .round-black {
-    width: 24px;
-    height: 24px;
+    width: 24px;    
+    height: 24px;   
     background-color: rgba(0, 0, 0, 1);
     color: rgba(255, 255, 255, 1);
     display: block;
@@ -148,6 +148,7 @@
     line-height: 24px;
     border-radius: 12px;
     font-size: 16px;
+    /*width, height, line-height 값을 동일하게 하여 둥근모양으로 잡는다*/
 }
 
 .more-button:hover .round-black {
