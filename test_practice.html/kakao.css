@@ -1,0 +1,25 @@
+@font-face {
+    font-family:"kakaoRegular";
+    src:url(../test_practice.html/resource/KakaoRegular.ttf);
+}
+
+@font-face {
+    font-family: "kakaoBold";
+    src:url(../test_practice.html/resource/KakaoBold.ttf);
+}
+
+    * {
+    font-family: KakaoRegular, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    }
+
+    body {
+        display: flex; /*전체 요소를 가로로 배치*/
+        justify-content: center;
+        min-width: 3000px;
+    }
+
+#wrapper {
+    
+}

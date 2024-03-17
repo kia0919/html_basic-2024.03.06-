@@ -15,11 +15,11 @@
 }
 
 body {
-    min-width: 1712px;
+    min-width: 1712px; /*컨텐츠의 최소 넓이*/
 }
 
 .all {
-    display: inline-block;
+    display: inline-block; /**/
 }
 
 .image {
