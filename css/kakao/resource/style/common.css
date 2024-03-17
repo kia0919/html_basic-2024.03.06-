@@ -21,7 +21,7 @@
     }
 
 #wrapper {
-    flex-shrink: 10; /*아이템의 너비감소 비율*/
+    flex-shrink: 0; /*아이템의 너비감소 비율*/
     display: flex;  /*부모 요소의 display 속성에 flex를 지정(flexbox지정)*/
     flex-direction: column; /*위에서 아래로 수직 배치*/
     gap: 60px;  /*각 컨텐츠와의 간격*/
@@ -47,6 +47,17 @@
     background-size: 100%;   /*블럭 사이즈에 100%맞춤.*/
     vertical-align: top; /*inline요소일때 적응되고, 수직정렬할때 사용한다.*/
 }
+
+/*Contents Box*/
+.contents-box {
+    display: grid;  /*디스플레이를 2차원 형태의 그리드로*/
+    grid-template: /**-* -columns, *-*-rows, *-*-areas를 한번에 지정하는 단축 속성*/
+        "comunication busniess"180px  /*영역 이름과 행의 크기와 갯수*/
+        "life-style shopping" 180px
+        "entertainment social" 180px
+        / 1fr 1fr; /*열의 갯수*/
+    gap: 16px;
+    }
 
 .content-card {
     background-color: rgba(240, 240, 240, 1);  /*요소에 배경색 지정*/
@@ -77,18 +88,6 @@
 .icon-button:hover {
     cursor: pointer; /*마우스 커서*/
 }
-
-
-/*Contents Box*/
-.contents-box {
-    display: grid;  /*디스플레이를 2차원 형태의 그리드로*/
-    grid-template: /**-* -columns, *-*-rows, *-*-areas를 한번에 지정하는 단축 속성*/
-        "comunication busniess"180px  /*영역 이름과 행의 크기와 갯수*/
-        "life-style shopping" 180px
-        "entertainment social" 180px
-        / 1fr 1fr; /*열의 갯수*/
-    gap: 16px;
-    }
 
     .more {
         background-color: rgba(0, 0, 0, 0.4);
