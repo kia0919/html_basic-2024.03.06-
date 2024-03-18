@@ -37,7 +37,7 @@ var x =10;
 if(true) {
     var x = 99;
 }
-// onsole.log(x);
+console.log(x);
 
 /*
     var 키워드로 선언한 변수는 블록 레벨 스코프가 아닌 함수 레밸 스코프를 가짐
