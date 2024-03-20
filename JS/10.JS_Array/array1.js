@@ -78,7 +78,6 @@ console.log('==============================');
 */
 
 
-
 console.log('==============================');
 
 /*
@@ -87,74 +86,90 @@ console.log('==============================');
 
 /*
     indexOf(element) : 
-    - 
-    - 
+    - 배열에서 매개변수로 전달된 요소를 검색하여 해당 인덱스를 반환
+    - 배열에 요소가 존재하지 않으면 -1을 반환
 */
-
+console.log(fruits.indexOf('banana')); // 1
+console.log(fruits.indexOf('orange')); // -1
 
 console.log('==============================');
 
 /*
     includes(element) :
-    - 
+    - 배열에 매개변수로 전달된 요소가 존재하면 true, 존재하지 않으면 false를 반환 
 */
-
+console.log(fruits.includes('banana')); //true
+console.log(fruits.includes('orange')); //false
 
 console.log('==============================');
 
 /*
     push(element) :
-    - 
+    - 배열의 마지막 인덱스에 요소를 추가하고 변경된 길이를 반환
 */
+console.log(fruits, fruits.length);  // [ 'apple', 'banana', 'melon' ] 3
 
+console.log(fruits.push('orange')); // orange를 추가
+console.log(fruits);   //[ 'apple', 'banana', 'melon', 'orange' ], push('orange')로 추가했음
 
 console.log('==============================');
 
 /*
     pop() :
-    - 
+    - 배열의 마지막 인덱스 요소를 제거하고 제거한 요소를 반환
 */
-
+console.log(fruits.pop());
+console.log(fruits); // orange [ 'apple', 'banana', 'melon' ]
 
 console.log('==============================');
 
 /*
     shift() :
-    - 
+    - 배열의 첫번째 인덱스 요소를 제거하고 제거한 요소를 반환
 */
+console.log(fruits.shift());
+console.log(fruits); // apple [ 'banana', 'melon' ]
 
 
 console.log('==============================');
 
 /*
-    reverse() :
-    - 
+    reverse() : 
+    - 배열의 순서를 역전
 */
-
+console.log(fruits.reverse());
+console.log(fruits); //[ 'melon', 'banana' ]  [ 'melon', 'banana' ]
 
 console.log('==============================');
 
 /*
     concat(array or item) : 
-    - 
+    - 매개변수로 전달된 값들을 해당 배열의 마지막 요소 뒤에 연결하여 새로운 배열을 반환
 */
-
+const newFruits = fruits.concat(['apple', 'orange']);
+console.log(newFruits); // [ 'melon', 'banana', 'apple', 'orange' ] 
+console.log(fruits);    // [ 'melon', 'banana' ]
 
 console.log('==============================');
 
 /*
     slice(start, end) : 
-    - 
+    - start에 해당하는 인덱스부터 end에 해당하는 인덱스 앞까지 복사하여 반환
 */
-
+console.log(newFruits.slice(1, 3)); // [ 'banana', 'apple' ]
+console.log(newFruits); // [ 'melon', 'banana', 'apple', 'orange' ]
 
 console.log('==============================');
 
 /*
     splice(start, eleteCount, items...) :
-    - 
+    - 배열의 요소를 제거하고 제거한 위치에 요소를 갈아끼운 배열을 반환
 */
+console.log(newFruits.splice(2,1)); // [ 'apple' ], splice(시작, 끝)
+console.log(newFruits); // [ 'melon', 'banana', 'orange' ]
 
+console.log(newFruits.splice(2, 1,'peach' ));  // [ 'orange' ]
+console.log(newFruits); //[ 'melon', 'banana', 'peach' ]
 
 
 
