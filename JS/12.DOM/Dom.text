@@ -1,0 +1,10 @@
+document
+    - html
+        - head
+        - body
+            - div(attribute)
+                - h1 (attribute, text)
+                    - form (attribute)
+                    - input (attribute)
+                    - input(attribute)
+                    
