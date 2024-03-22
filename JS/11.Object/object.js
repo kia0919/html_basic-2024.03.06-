@@ -83,7 +83,7 @@ console.log('==============================');
     - 객체에 존재하지 않는 속성에 접근하면 underfined를 반환
 */
 console.log(suhyun.age);
-console.log(suhyun['last-name']);
+console.log(suhyun[' last-name ']);
 let property = 'first name';
 console.log(suhyun[property]);
 
