@@ -12,25 +12,35 @@
     <script>
 
         /*
-            JSON: 
-            - 
-            - 
-            - 
+            JSON: JavaScript Object Notation
+            - 클라이언트와 서버 간 데이터 교환을 위한 문자열 포맷
+            - XML 포맷보다 가볍고 사용성이 좋음
+            - 자바스크립트의 객체 리터럴과 비슷하게 생겼지만, 텍스트로 구성된 규칙이 있는 데이터 구조.
         */
 
         /*
             JSON.stringify : javascript 객체를 JSON 형식의 문자열로 변환
         */
-        
+        const object = {
+            name: '이방원',
+            age: 56
+        };
+        console.log(typeof object, object);
+
+        const jsonObject = JSON.stringify(object);
+        console.log(typeof jsonObject, jsonObject);
         
 
         console.log('==============================');
 
         /*
-            JSON.parse : 
+            JSON.parse : JSON 포맷의 문자열 데이터를 자바스크립트 객체로 변경
         */
-        
-        
+        const stringJson = '{ "name": "이도", "age": 54 }';
+        console.log(typeof stringJson, stringJson);
+
+        const object2 = JSON.parse(stringJson);
+        console.log(typeof object2, object2);
 
         console.log('==============================');
 
