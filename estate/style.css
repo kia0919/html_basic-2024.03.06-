@@ -7,7 +7,7 @@
     font-style: normal;
 }
 
-* {
+* { /*전체 지정: margin:0, font-family: Pestendard*/
     margin: 0px;
     font-family: Pretendard; /*전체 폰트를 프리탄드로 지정*/
 }
@@ -19,14 +19,14 @@
     line-height: 173%;
 }
 
-.label {
+.label { /*아이디, 비밀번호 text font 지정*/
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.input {
+.input { /**/
     flex-grow: 1;
     border: 1px solid rgba(238, 238, 238, 1);
     border-radius: 6px;
