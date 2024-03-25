@@ -9,10 +9,10 @@
 
 * {
     margin: 0px;
-    font-family: Pretendard;
+    font-family: Pretendard; /*전체 폰트를 프리탄드로 지정*/
 }
 
-.h1 {
+.h1 {   /*title 폰트 설정 */
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
