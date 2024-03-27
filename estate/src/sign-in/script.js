@@ -1,4 +1,3 @@
-
 const ID = 'userIdentity';
 const PASSWORD = 'P!ssw0rd';
 
@@ -36,3 +35,5 @@ const kakaoButtonElement = document.getElementById('kakao-button');
 kakaoButtonElement.addEventListener('click', onKakaoButtonClickHandler);
 const naverButtonElement = document.getElementById('naver-button');
 naverButtonElement.addEventListener('click', onNaverButtonClickHandler);
+naverButtonElement.addEventListener('click', onNaverButtonClickHandler);
+
