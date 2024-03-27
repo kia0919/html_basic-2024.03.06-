@@ -60,6 +60,7 @@ function onAuthNumberInputHandler (event) {
 idInputElement.addEventListener('input', function (event) {
     onIdInputHandler(event);
     setSignUpButton();
+    
 });
 
 passwordInputElement.addEventListener('input', function (event) {
