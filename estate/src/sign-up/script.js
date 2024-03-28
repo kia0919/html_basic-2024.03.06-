@@ -33,15 +33,18 @@ const signInLinkElement = document.getElementById('sign-in-link');
 // event 핸들러 함수: 버튼을 클릭할 때 실행되는 함수
 function onIdInputHandler (event) {
     id = event.target.value;    // target: 실제로 이벤트를 발생시킨 요소
-    isDuplicate = true; // 중복가능여부 true
+    isDuplicate = true; // 1행에서 id의 값을 타겟으로 지정했으므로 해당 id값을 입력시,  isDuplicate = true 인해 중복된 것이라는 의미가 담긴다.
 
+    //id가 존재한다면 checkDuplicateButtonElement요소의 classname이 input-primary-button으로 바뀜
     if (id) checkDuplicateButtonElement.className = 'input-primary-button';
+    //존재하지 않는다면 checkDuplicateButtonElement요소의 classname이 input-disable-button으로 바뀜
     else checkDuplicateButtonElement.className = 'input-disable-button';
 }
 
+// event 핸들러 함수: 버튼을 클릭할 때 실행되는 함수
 function onPasswordInputHandler (event) {
-    // 
-    password = event.target.value;
+    // 비밀번호 변수에 이벤트가 발생한 실제 요소의 value 값을 할당한다.
+    password = event.target.value; //2행의 password의 값을 타겟으로 하면 이벤트가 실행됨
 
     // 비밀번호 패턴을 정규식으로 영문자와 숫자를 반드시 포함한 상태로 8~13자로 지정
     const passwordReg = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,13}$/;
@@ -65,8 +68,9 @@ function onPasswordInputHandler (event) {
     passwordMessageElement.textContent = '';
 }
 
+// event 핸들러 함수: 버튼을 클릭할 때 실행되는 함수
 function onPasswordCheckInputHandler (event) {
-    passwordCheck = event.target.value;
+    passwordCheck = event.target.value; //
 
     isEqualPassword = password === passwordCheck;
     if (!isEqualPassword) {
@@ -80,8 +84,8 @@ function onPasswordCheckInputHandler (event) {
 
 function onEmailInputHandler (event) {
     email = event.target.value;
-    isEmail = false;
-    isDuplicateEmail = true;
+    isEmail = false;    // 입력한 이메일 주소가 유효하지 않음을 나타냄.
+    isDuplicateEmail = true;    //입력한 이메일 주소가 이미 등록한 이메일임을 나타냄
 
     if (email) checkEmailButtonElement.className = 'input-primary-button';
     else checkEmailButtonElement.className = 'input-disable-button';
