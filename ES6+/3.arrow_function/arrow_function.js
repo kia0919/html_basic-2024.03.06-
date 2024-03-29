@@ -45,7 +45,7 @@ func = (name, tombName) => {
         tombName
     };
 };
-// 위코드를 한줄로 바꿀 때, 중괄호, return, 지움고, 소괄호로 묶어준다.
+
 func = (name, tombName) => ({
     name,
     tombName
@@ -60,13 +60,27 @@ func = (name, tombName) => ({
 const pow = (x) => {
     return x * x;
 };
-console.log( pow(10) );
+console.log( pow(10) ); //100
 
 const numbers = [1, 2, 3, 4 ,5];
 numbers.forEach(function (value, index) {
     console.log(`index : ${index} / value : ${value}`);
-});   // 배열의 요소와 인덱스를 반복
+/*
+    index : 0 / value: 1
+    index : 1 / value : 2
+    index : 2 / value : 3
+    index : 3 / value : 4
+    index : 4 / value : 5 
+*/
+});   // forEach: 배열의 요소와 인덱스를 반복,  ${}:템플릿 리터럴로 표현식 삽입 가능
 
-numbers.forEach(( value, index ) => {
+numbers.forEach(( value, index ) => {   //function 대신 => 사용
         console.log(`index : ${index} / value : ${value} `);
+/*
+    index : 0 / value: 1
+    index : 1 / value : 2
+    index : 2 / value : 3
+    index : 3 / value : 4
+    index : 4 / value : 5 
+*/
 });
