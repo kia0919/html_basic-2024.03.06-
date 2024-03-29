@@ -45,7 +45,6 @@ var varHoisting = 10;
 /*
     const
 */
-
 /*
     선언과 초기화 : 
     - const는 재할당이 불가능
@@ -66,9 +65,9 @@ var varHoisting = 10;
 
 const king = { name: '이성계'  };
 // TypeError: Assignment to constant variable.
-// king = { name: '이방과'};
+// king = { name: '이방과'};    **const:재할당 X
 
-king.name = '이방과';
+king.name = '이방과';   // 객체의 속성은 변경 가능
 
 
 /*
