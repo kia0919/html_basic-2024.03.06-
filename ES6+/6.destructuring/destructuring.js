@@ -77,9 +77,12 @@ console.log('========================================');
     spread 연산자를 활용
     - 객체 디스트럭처링 마지막에 스프레드 연산자를 사용하면 나머지 모든 속성으로 새로운 객체 생성
 */
-const { birthday, death, ...restKing } = king;
+const { birthday, death, ...restKing } = king; 
 console.log(birthday);  // 1335.11.04.
 console.log(death);     // 1408.06.27.
+
+//  spread 연산자 활용으로, birthday, death 뺀 나머지 name, tombname이 출력된다.
+//  spread 연산자 사용시, 변수명은 마음대로 지정하면 된다.
 console.log(restKing);  // { name: '이성계', tombname: '태조' }
 
 

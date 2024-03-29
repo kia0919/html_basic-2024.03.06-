@@ -3,11 +3,11 @@
     - function 키워드 대신 화살표 (=>)를 사용하여 함수를 생성하는 방법 (기본적으로 일회성, 익명 함수 )
 */
 
-let func1 = function(arg1, arg2) {   
+let func = function (arg1, arg2) {
 
 }
 // 위 아래 같은 코드.
-func1 = (arg1, arg2) => {
+func = (arg1, arg2) => {
 
 }
 
@@ -16,15 +16,15 @@ func1 = (arg1, arg2) => {
 */
 
 // 매개변수가 없을 경우
-func = () => {}
+func = () => { }
 
 // 매개변수가 하나일 경우, 매개변수 위치의 소괄호 제거 가능
-func = (arg) => {   }
-func = arg => {   }    
+func = (arg) => {  }
+func = arg => {  }  
 
 // 매개변수가 여러개일 경우, 매개변수 위치의 소괄호 제거X
 func = (arg1, arg2) => {  }
-func = arg1, arg2 => {  }   //1. func = arg1;  /  arg2 => {  }이케 된거임(매개변수에 괄호가 없으면.)
+// func = arg1, arg2 => {  }   //1. func = arg1;  /  arg2 => {  }이케 된거임(매개변수에 괄호가 없으면.)
 
 /*
     구현부 지정 방법

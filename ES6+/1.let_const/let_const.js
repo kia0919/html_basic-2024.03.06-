@@ -5,7 +5,7 @@
 {
     var funcLevel = 10;
 }
-console.log(funcLevel);
+console.log(funcLevel); //10
 
 /* 블록 레밸 변수는 해당 블럭 외부에서 사용 불가능
 {
@@ -22,10 +22,10 @@ console.log(blockLevel);    //blockLevel이므로 해당 변수와 같으 블럭
     - 변수를 동일한 이름으로 여러 개를 생성할 수 없음
 */
 var varVariable = 10;
-var varVariable = 10;
+var varVariable = 10;   //var는 동일한 변수명 여러개 생성 가능
 
 // let letVariable = 10;
-// let letVariable = 10;
+// let letVariable = 10;    // let은 동일한 변수명 여러개 생성 시 error.
 
 
 /*
@@ -35,11 +35,12 @@ var varVariable = 10;
 console.log(varHoisting);   //undefined
 var varHoisting = 10;       
 
-// ReferenceError: Cannot access 'letHoisting' before initialization
+// ReferenceError: Cannot access 'letHoisting' before initialization(초기화 전에 액세스 할 수 없다.)
 // console.log(letHoisting);   //error.
 // let letHoisting = 10;
 
 // ReferenceError: notDefined is not defined
+// notDefined라는 변수를 선언하지 않아 존재하지 않는 변수를 참조하여 일어나는 에러.
 // console.log(notDefined);
 
 /*
@@ -68,7 +69,7 @@ const king = { name: '이성계'  };
 // king = { name: '이방과'};    **const:재할당 X
 
 king.name = '이방과';   // 객체의 속성은 변경 가능
-
+console.log(king);  // { name: '이방과' }
 
 /*
     var, let, const(언제 쓰는지)
