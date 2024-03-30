@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../common.css" />
     <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body>\
     <div id="sign-in-wrapper">
         <div class="sign-in-image-box"></div>
         <div class="sign-in-box">
@@ -18,6 +18,7 @@
                         <div class="input-box">
                             <div class="input-label label">아이디</div>
                             <div class="input-content-box">
+                                <!--id=id class= type=text타입, placeholder=사용자가 아무것도 입력 안했을때 해당메시지가 뜸. -->
                                 <input id="id" class="input" type="text" placeholder="아이디를 입력해주세요." />
                             </div>
                             <div class="input-message"></div>
@@ -25,12 +26,16 @@
                         <div class="input-box">
                             <div class="input-label label">비밀번호</div>
                             <div class="input-content-box">
+                                <!--id=psssword class=input type=password타입, placeholder=사용자가 아무것도 입력 안했을때 해당메시지가 뜸. -->
                                 <input id="password" class="input" type="password" placeholder="비밀번호를 입력해주세요." />
                             </div>
+                            <!--error 클래스로 인해 오류 메시지를 표시할 때 JS에서 오류 메시지 지정.  -->
                             <div id="sign-in-message" class="input-message error"></div>
                         </div>
                     </div>
                     <div class="sign-in-button-container">
+                        <!--full-with: 버튼이 가로 폭으로 최대한 넓게 지정,-->
+                        <!--버튼을 클릭했을 때 onclick="onSignInButtonClickHandler:버튼 클릭 시 JS이벤트 처리기 설정.-->
                         <div class="primary-button full-width" onclick="onSignInButtonClickHandler();">로그인</div>
                         <div id='sign-up-link' class="text-link">회원가입</div>
                     </div>
