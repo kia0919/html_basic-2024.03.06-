@@ -57,6 +57,7 @@ func = (name, tombName) => ({
     - 화살표 함수는 익명 함수로만 사용할 수 있기 때문에 함수표현식 형태로 변수에 저장하여 사용
     - 콜백 함수에 많이 사용됨
 */
+
 const pow = (x) => {
     return x * x;
 };
@@ -74,7 +75,7 @@ numbers.forEach(function (value, index) {
 */
 });   // forEach: 배열의 요소와 인덱스를 반복,  ${}:템플릿 리터럴로 표현식 삽입 가능
 
-numbers.forEach(( value, index ) => {   //function 대신 => 사용
+numbersforEach(( value, index ) => {   //function 대신 => 사용
         console.log(`index : ${index} / value : ${value} `);
 /*
     index : 0 / value: 1
