@@ -37,7 +37,7 @@ const numbers = [1, 2, 3, 4, 5];
 console.log(numbers);       // [ 1, 2, 3, 4, 5 ]
 
 console.log(...numbers);    // 1 2 3 4 5
-console.log(1, 2, 3, 4, 5);
+console.log(1, 2, 3, 4, 5);x
 
 console.log('========================================');
 
