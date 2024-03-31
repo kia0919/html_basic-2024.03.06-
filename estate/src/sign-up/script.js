@@ -5,9 +5,10 @@ const AUTH_NUMBER = '1010'; // 각 상수 값 지정
 
 // 사용자가 입력한 값들을 저장하는 변수들을 초기화 함
 let id = '', password = '', passwordCheck = '', email = '', authNumber = ''; 
-// isDuplicate:중복가능여부, isEmail: 이메일 유효성, isDuplicateEmail: 이메일 중복 여부, isEqualAuthNumber: 인증번호 일치 여부,
+// isDuplicate:중복가능여부, isEmail: 이메일 유효성, isDuplicateEmail: 이메일 중복 여부, isEqualAuthNumber: 인증번호 일치 여부 왜 FALSE임,
 // ispasswordPattern: 비밀번호 패턴 일치여부, isEqualPassword: 비밀번호 일치 여부
-let isDuplicate = true, isPasswordPattern = false, isEqualPassword = false, isEmail = false, isDuplicateEmail = true,
+let isDuplicate = true, isPasswordPattern = false, isEqualPassword = false, isEmail = false, 
+isDuplicateEmail = true,
 isEqualAuthNumber = false;
 
 
@@ -51,10 +52,11 @@ function onIdInputHandler (event) {
     else checkDuplicateButtonElement.className = 'input-disable-button';
 }
 
-// event 핸들러 함수: 버튼을 클릭할 때 실행되는 함수,
+// onPasswordInputHandler함수: 비밀번호 패턴확인 함수 
 function onPasswordInputHandler (event) {
     // 비밀번호 변수에 이벤트가 발생한 실제 요소의 value 값을 할당한다.
-    password = event.target.value; //2행의 password의 값을 타겟으로 하면 이벤트가 실행됨
+    // let으로 지정한 password는 ""빈 문자열로, 사용자가 입력한 password값을 입력할 때 event가 실행 됨
+    password = event.target.value;
 
     // 비밀번호 패턴을 정규식으로 영문자와 숫자를 반드시 포함한 상태로 8~13자로 지정
     const passwordReg = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,13}$/;
@@ -103,12 +105,12 @@ function onPasswordCheckInputHandler (event) {
     passwordCheckMessageElement.textContent = '';
 }
 
-// 이메일 이벤트 처리 함수
+// onEmailInputHandler함수: 이메일 유효성(정규식) 검사하는 함수
 function onEmailInputHandler (event) {
 // 이메일 이벤트의 입력 요소 값을 가져와서 email에 할당
     email = event.target.value;
-// false: 유효하지 않음을 뜻함
-    isEmail = false;
+// false: 이메일 입력칸 값이 없을 경우 즉, 이메일 유효성
+    isEmail = false;    // 얘는 기본 초기값이라고 하는데 왜 써야하는지??
 //입력한 이메일 주소가 이미 등록한 이메일임을 나타냄
     isDuplicateEmail = true;
 
@@ -135,13 +137,13 @@ function onAuthNumberInputHandler (event) {
 // addEventListener:이벤트 속성으로, input(입력), click(클릭)이 발생했을 때 실행되는 함수 지정
 idInputElement.addEventListener('input', function (event) {
 // 이벤트 발생시(id입력했을 때), onIdInputHandler, setSignUpButton함수가 순차적으로 발생
-    onIdInputHandler(event); // 입력된 아이디를 처리하는 함수 호출
+    onIdInputHandler(event); // 입력된 아이디 중복체크하는 함수 호출
     setSignUpButton();  //회원가입 버튼 상태를 업데이트 해주는 함수 호출(???????앞에서 미리 정의를 하지 않아도 되는건가)
 });
 
 // 비밀번호 입력시, 발생되는 이벤트 함수
 passwordInputElement.addEventListener('input', function (event) {
-//  입력값을 처리하는 함수인 onPasswordInputHandler함수를 호출
+//  입력값을 처리하는 함수인 onPasswordInputHandler함수(비번 정규식)를 호출
     onPasswordInputHandler(event);
 // 회원가입 버튼상태 업데이트하는 setSignUpButton을 호출
     setSignUpButton();
@@ -192,10 +194,10 @@ function onCheckDuplicateClickHandler (event) {
 
 // 이메일 확인 버튼 클릭시 실행되는 함수
 function onCheckEmailClickHandler (event) {
-// 이메일이 비었다면 함수 종료?
+// 이메일 칸이 빈칸일 때 이메일 인증 버튼이 안눌러 지도록 하는 것.?? 이게 뭔지 물어보자
     if (!email) return;
 
-// 이메일 유효성검사하기 위한 정규식 표현
+    // 이메일 유효성검사하기 위한 정규식 표현
     const emailReg = /^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,4}$/;
 // 입력한 이메일과 정규식 표현식이 일치하는 확인 하고, 결과를 할당
     isEmail = emailReg.test(email);
@@ -274,7 +276,7 @@ function setSignUpButton () {
         id && password && passwordCheck && email && authNumber && 
         !isDuplicate && isPasswordPattern && isEqualPassword && isEmail && !isDuplicateEmail && isEqualAuthNumber;
 // 모든 조건 충족 시 버튼이 활성화 되는데 signUpButtonElement의 className을 primary-button으로 변경하고,
-// full-width 부모요소의 전체 넓이를 차지하는 css스타일 지정
+// full-width 부모요소의 전체 넓이를 차지하는 css스타일 지정, 물어보기.
     if (isPrimaryButton) signUpButtonElement.className = 'primary-button full-width';
 // 조건을 모두 충족하지 않아 버튼 비활성화 이면은, className을 disable-button으로 지정,
 // full-width으로 부모요소의 전체 넓이를 차지하는 css스타일 지정.
