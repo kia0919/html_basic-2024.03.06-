@@ -3,6 +3,7 @@
     - 해당 모듈에 있는 변수, 함수, 클래스를 외부에서 접근할 수 있도록 함
 */
 const exportVariable = 'export 변수';
+
 function exportFunction () {
     return 'export 함수';
 }
@@ -16,7 +17,7 @@ class exportClass {
 /*
     - 하나의 객체로 구성하여 한번에 export 가능
 */
-export { exportVariable, exportFunction, exportClass };
+// export { exportVariable, exportFunction, exportClass };
 
 
 /*
