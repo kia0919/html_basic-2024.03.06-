@@ -60,7 +60,7 @@ class Sample {
     //퍼블릭 필드
     publicField;
     //프라이빗 필드 # 붙여야 함
-    #privateFieled
+    #privateFieled;
     //정적(스텍틱) 퍼블릭 필드
     static staticPublicField = '정적 퍼블릭 필드';
     //정적(스텍틱) 프라이빗 필드
@@ -75,34 +75,115 @@ class Sample {
     }
 }
 
+const sample1Instance = new Sample('퍼블릭 필드', '프라이빗 필드');
+
+console.log(sample1Instance); // Sample { publicField: '퍼블릭 필드', privateField: '프라이빗 필드' }
+// console.log(sample1Instance, #privateField);
+// console.log(sample1Instance, staticPublicField);
+
+console.log(Sample.staticPublicField); // 정적 퍼블릭 필드
+
 
 console.log('==================================================');
 
-/*
+/* 캡슐화 관련임.
     getter, setter : 
-    - 
-    - 
+    - getter : 프라이빗 멤버 변수의 값을 얻을  수 있는 캡슐화 메서드
+    - setter : 프라이빗 멤버 변수의 값을 할당 할 수 있는 캡슐화 메서드
 */
+class Sample2 {
+    #privateField;
 
+    constructor (privateField) {
+        this.#privateField = privateField;
+    }
 
+    get privateField() {
+        return this.#privateField;
+    }
+
+    set privateField(privateField) {
+        this.#privateField = privateField;
+    }
+}
+
+const sample2Instance = new Sample2('프라이빗 필드');
+console.log(sample2Instance.privateField); //프라이빗 필드
+sample2Instance.privateField = '변경 프라이빗 필드';
+console.log(sample2Instance.privateField); // 변경 프라이빗 필드
 
 console.log('==================================================');
 
 /*
     인스턴스 메서드와 정적 메서드 : 
-    - 
-    - 
+    - 클래스 내부에 function 키워드를 제거한 함수를 작성하여 인스턴스 메서드 선언 가능
+    - static 키워드를 추가하여 정적 메서드 선언 가능
 */
+class Sample3 {
+    instanceMethod () {
+        console.log('인스턴스 메서드') // 인스턴스 메서드
+    }
+    static staticMethod () {
+        console.log('정적 메서드'); // 정적 메서드
+    }
+}
 
-
+const sample3Instatnce = new Sample3();
+sample3Instatnce.instanceMethod();
+Sample3.staticMethod();
 
 console.log('==================================================');
 
 /*
     클래스 상속 : 
-    - 
-    - 
-    - 
+    - extends 키워드를 사용하여 클래스 상속 가능
+    - 메서드 오버라이딩 가능    (재정의)
+    - super 키워드로 부모 클래스를 참조할 수 있음
 */
+class ParentClass {
+    parentField;
 
+    constructor (parentField) {
+        this.parentField = parentField;
+    }
 
+    parentMethod () {
+        console.log('부모 메서드');  //부모 메서드
+    }
+}
+// 부모 클래스인 ParentClass으로부터 Child1Class에 상속 받는다.
+class Child1Class extends ParentClass {
+
+    constructor() {
+        super('부모 필드');
+        this.Child1Field = '자식1필드';
+    }
+
+    Child1Method() {
+        console.log('자식1 메서드'); //자식1메서드 this.Child1Field로도 가능
+    }
+}
+
+class Child2Class extends ParentClass {
+    Child2Field;
+
+    constructor () {
+        super('부모 필드');
+        this.Child2Field = '자식2 필드';
+    }
+
+    parentMethod () {
+        console.log('자식2 메서드'); //자식2메서드
+    }
+}
+
+const child1Instance = new Child1Class();
+console.log(child1Instance.parentClass);
+console.log(child1Instance.Child1Field); 
+child1Instance.parentMethod();
+child1Instance.Child1Method(); 
+
+const child2Instance = new Child2Class();
+console.log(child2Instance.parentField); //부모 필드
+console.log(child2Instance.Child2Field); //자식2필드
+child2Instance.parentMethod();
