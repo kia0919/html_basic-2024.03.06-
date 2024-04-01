@@ -2,7 +2,7 @@
     매개변수 기본값 : 
     - 함수 호출시 인수를 전달하지 않았으면 사용할 기본값을 지정할 수 있음
 */
-// a, b에 값을 지정핮 않으면 undefined인 a, b를 더했기 때문에 NaN이 나옴
+// a, b에 값을 지정하지 않으면 undefined인 a, b를 더했기 때문에 NaN이 나옴
 const add = (a = 10, b = 20) => { return a + b };
 console.log(add());     // 30
 console.log(add(30, 90));   // 120
@@ -22,7 +22,7 @@ restFunction1(1, 2, 3, 4, 5);
 
 const restFunction2 = (arg1, ...args) => {  //rest매개변수는 제일 뒤에다가 배치.
     console.log(arg1);      //1
-    console.log(args);      // [ 2, 3, 4, 5 ]
+    console.log(args);      // [1, 2, 3, 4, 5 ]
 }
 restFunction2(1, 2, 3, 4, 5);
 
@@ -37,7 +37,7 @@ const numbers = [1, 2, 3, 4, 5];
 console.log(numbers);       // [ 1, 2, 3, 4, 5 ]
 
 console.log(...numbers);    // 1 2 3 4 5
-console.log(1, 2, 3, 4, 5);x
+console.log(1, 2, 3, 4, 5);  // 1 2 3 4 5
 
 console.log('========================================');
 
@@ -45,9 +45,9 @@ console.log('========================================');
 const copyNumbers = [ ...numbers ];
 console.log(copyNumbers);
 
-copyNumbers[0] = 10;
+copyNumbers[0] = 10; 
 console.log(numbers);          // [ 1, 2, 3, 4, 5 ]
-console.log(copyNumbers); // [ 10, 2, 3, 4, 5 ]
+console.log(copyNumbers); // [ 10, 2, 3, 4, 5 ], 0번 인덱스값을 10으로 변경한 것
 
 console.log('========================================');
 
