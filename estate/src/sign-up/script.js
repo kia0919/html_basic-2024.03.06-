@@ -110,7 +110,7 @@ function onEmailInputHandler (event) {
 // 이메일 이벤트의 입력 요소 값을 가져와서 email에 할당
     email = event.target.value;
 // false: 이메일 입력칸 값이 없을 경우 즉, 이메일 유효성
-    isEmail = false;    // 얘는 기본 초기값이라고 하는데 왜 써야하는지??
+    isEmail = false;
 //입력한 이메일 주소가 이미 등록한 이메일임을 나타냄
     isDuplicateEmail = true;
 
@@ -194,7 +194,7 @@ function onCheckDuplicateClickHandler (event) {
 
 // 이메일 확인 버튼 클릭시 실행되는 함수
 function onCheckEmailClickHandler (event) {
-// 이메일 칸이 빈칸일 때 이메일 인증 버튼이 안눌러 지도록 하는 것.?? 이게 뭔지 물어보자
+// 이메일 칸이 빈칸일 때 이메일 인증 버튼이 안눌러 지도록 하는 것.
     if (!email) return;
 
     // 이메일 유효성검사하기 위한 정규식 표현

@@ -1,28 +1,21 @@
 /*
     클래스 정의 : class 키워드를 사용하여 선언
-    - constructor(생성자)를 이용해서 멤버 변수를 선언 및 초기화를 할 수 있음
-    - 생성자에서 this.키워드를 이용하여 멤버 변수를 지정1
-    - new  연산자를 통해서 인스턴스를 생성할 수 있음
+    - constructor를 이용해서 멤버 변수를 선언 및 초기화를 할 수 있음
+    - 생성자에서 this를 이용해서 멤버 변수를 지정
+    - new 연산자를 통해서 인스턴스를 생성할 수 있음
 */
 // 왕 클래스 : 이름 / 묘명 / 생일 / 사망일
-// class king {
-//         constructor () {
-//             this.name = '이성계';
-//             this.tombName = '태조';
-//             this.birth = '1335-11-04';
-//             this.death = '1408-06-27';
-//         }
+// class King {
+//     constructor () {
+//         this.name = '이성계';
+//         this.tombName = '태조';
+//         this.birth = '1335-11-04';
+//         this.death = ' 1408-06-27';
+//     }
 // }
 
-// const taejo = new king();
+// const taejo = new King();
 // console.log(taejo);
-/*king {
-    name: '이성계',
-    tombName: '태조',
-    birth: '1335-11-04',
-    death: '1408-06-27'
-  }*/
-
 
 console.log('==================================================');
 
@@ -31,10 +24,10 @@ console.log('==================================================');
     - 인스턴스를 생성하고 클래스 필드를 초기화하기 위한 용도로 사용되는 특수한 메서드 (생성자)
     - 생성자안에서 this 키워드를 이용해서 클래스의 멤버변수를 선언하고 초기화 할 수 있음
     - 생성자의 매개변수로 각 속성의 값을 받아서 초기화
-    - 자바 스크립트의 생성자는 오버로드가 되지 않음
+    - 자바스크립트의 생성자는 오버로드가 되지 않음
 */
 class King {
-//constructor () {}     JS는 오버로드 안됨!!!
+    // constructor () {}
     constructor (name, tombName, birth, death) {
         this.name = name;
         this.tombName = tombName;
@@ -43,52 +36,54 @@ class King {
     }
 }
 
-const junjong = new King ('이방과', '정종', '1357-07-26', '1419-10-24');
-console.log(junjong); 
-
+const junjong = new King('이방과', '정종', '1357-07-26', '1419-10-24');
+console.log(junjong);
+/*King {
+    name: '이방과',
+    tombName: '정종',
+    birth: '1357-07-26',
+    death: '1419-10-24'
+  }*/
 
 console.log('==================================================');
 
-/* 접근제어자 4가지:public, protected, default, private.
+/*
     클래스의 필드 선언 : ES6+의 클래스가 가질 수 있는 제어자
     - 퍼블릭 필드
     - 프라이빗 필드
     - 정적(스테틱) 퍼블릭 필드
     - 정적(스테틱) 프라이빗 필드
-*/
-class Sample {
-    //퍼블릭 필드
+*/ 
+class Sample1 {
+    // 퍼블릭 필드
     publicField;
-    //프라이빗 필드 # 붙여야 함
-    #privateFieled;
-    //정적(스텍틱) 퍼블릭 필드
+    // 프라이빗 필드
+    #privateField;
+    // 정적 퍼블릭 필드
     static staticPublicField = '정적 퍼블릭 필드';
-    //정적(스텍틱) 프라이빗 필드
+    // 정적 프라이빗 필드
     static #staticPrivateField = '정적 프라이빗 필드';
 
-    constructor (publicField, privateField ) {
-        // 인스턴스변수 생기는 거임.
+    constructor (publicField, privateField) {
         this.publicField = publicField;
-        this.privateField = privateField;
+        this.#privateField = privateField;
         // this.staticPublicField = publicField;
-        // this.#StaticprivateFieled = privateField;
+        // this.#staticPrivateField = privateField;
     }
 }
 
-const sample1Instance = new Sample('퍼블릭 필드', '프라이빗 필드');
+const sample1Instance = new Sample1('퍼블릭 필드', '프라이빗 필드');
 
-console.log(sample1Instance); // Sample { publicField: '퍼블릭 필드', privateField: '프라이빗 필드' }
-// console.log(sample1Instance, #privateField);
-// console.log(sample1Instance, staticPublicField);
-
-console.log(Sample.staticPublicField); // 정적 퍼블릭 필드
-
+console.log(sample1Instance); // Sample1 { publicField: '퍼블릭 필드' }
+// console.log(sample1Instance.#privateField);
+// console.log(sample1Instance.staticPublicField);
+console.log(Sample1.staticPublicField); // 정적 퍼블릭 필드
 
 console.log('==================================================');
 
-/* 캡슐화 관련임.
+/*
     getter, setter : 
-    - getter : 프라이빗 멤버 변수의 값을 얻을  수 있는 캡슐화 메서드
+    - getter : 프라이빗 멤버 변수의 값을 얻을 수 있는 캡슐화 메서드
     - setter : 프라이빗 멤버 변수의 값을 할당 할 수 있는 캡슐화 메서드
 */
 class Sample2 {
@@ -108,7 +103,7 @@ class Sample2 {
 }
 
 const sample2Instance = new Sample2('프라이빗 필드');
-console.log(sample2Instance.privateField); //프라이빗 필드
+console.log(sample2Instance.privateField); // 프라이빗 필드
 sample2Instance.privateField = '변경 프라이빗 필드';
 console.log(sample2Instance.privateField); // 변경 프라이빗 필드
 
@@ -121,15 +116,16 @@ console.log('==================================================');
 */
 class Sample3 {
     instanceMethod () {
-        console.log('인스턴스 메서드') // 인스턴스 메서드
+        console.log('인스턴스 메서드'); // 인스턴스 메서드
     }
+
     static staticMethod () {
         console.log('정적 메서드'); // 정적 메서드
     }
 }
 
-const sample3Instatnce = new Sample3();
-sample3Instatnce.instanceMethod();
+const sample3Instance = new Sample3();
+sample3Instance.instanceMethod();
 Sample3.staticMethod();
 
 console.log('==================================================');
@@ -137,53 +133,66 @@ console.log('==================================================');
 /*
     클래스 상속 : 
     - extends 키워드를 사용하여 클래스 상속 가능
-    - 메서드 오버라이딩 가능    (재정의)
+    - 메서드 오버라이딩 가능
     - super 키워드로 부모 클래스를 참조할 수 있음
+    - 생성자는 상속되지 않음
 */
-class ParentClass {
-    parentField;
 
+// 해당 부모클래스에 parentField 필드와, parentMethod()메서드를 가지고 있고,
+class ParentClass {
+    parentField;  //필드
+    
     constructor (parentField) {
         this.parentField = parentField;
     }
 
     parentMethod () {
-        console.log('부모 메서드');  //부모 메서드
+        console.log('부모 메서드');
     }
 }
-// 부모 클래스인 ParentClass으로부터 Child1Class에 상속 받는다.
+
+// 부모 클래스인 ParentClass로부터  상속 받음
 class Child1Class extends ParentClass {
+    child1Field;
 
     constructor() {
+        // super로 부모 클래스를 참조.
         super('부모 필드');
-        this.Child1Field = '자식1필드';
+        this.child1Field = '자식1 필드';
     }
 
-    Child1Method() {
-        console.log('자식1 메서드'); //자식1메서드 this.Child1Field로도 가능
+    child1Method () {
+        console.log('자식1 메서드');
     }
 }
 
 class Child2Class extends ParentClass {
-    Child2Field;
+    child2Field;
 
     constructor () {
+        // 부모클래스의 필드, 메서드를 참조하기 위함.
         super('부모 필드');
-        this.Child2Field = '자식2 필드';
+        this.child2Field = '자식2 필드';
     }
 
     parentMethod () {
-        console.log('자식2 메서드'); //자식2메서드
+        //오버라이딩된 메서드
+        console.log('자식2 메서드'); 
     }
 }
 
+// child1Instance 인스턴스 변수 생성
 const child1Instance = new Child1Class();
-console.log(child1Instance.parentClass);
-console.log(child1Instance.Child1Field); 
+console.log(child1Instance.parentField);
+console.log(child1Instance.child1Field);
+// 부모클래스로부터 상속받은 필드를 사용
+// 자식클래스에서 새로 추가한 메서드 사용
 child1Instance.parentMethod();
-child1Instance.Child1Method(); 
+child1Instance.child1Method();
 
+// child2Instance 인스턴스 변수 생성
 const child2Instance = new Child2Class();
-console.log(child2Instance.parentField); //부모 필드
-console.log(child2Instance.Child2Field); //자식2필드
+console.log(child2Instance.parentField);
+console.log(child2Instance.child2Field);
+// 부모에게 상속받은 메서드를 재정의한 메서드를 사용
 child2Instance.parentMethod();
