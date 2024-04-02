@@ -5,6 +5,7 @@
 */
 interface Person<T> {
     name: string;
+    //인터페이스 <T>로 data 타입에 T를 지정할 수 있다.
     data: T;
 }
 
@@ -16,6 +17,7 @@ const person: Person<string> = {
 person.data;
 
 const func = <T>(name: string, data: T) => {
+    //Person<T>객체 생성
     const result: Person<T> = { name, data };
     return result;
 }

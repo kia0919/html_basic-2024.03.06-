@@ -2,7 +2,7 @@
     타입선언 : 
     - 변수 및 함수에 타입을 지정하여 타입에 대한 제한을 추가할 수 있음
 */
-let variable : string   //타입 지정
+let variable : string 
 // variable = true  앞에서 string 타입을 선언해줬으므로 문자열만 지정 가능
 
 function func(arg: number): string{        //string으로 반환
@@ -53,8 +53,8 @@ const aFunc = (): void => {
     타입추론 : 자주사용
     - 타입을 선언하지 않고 변수에 값이 할당되는 순간에 할당된 값에 따라 변수의 타입이 결정나는 것
 */
-const stringVariable = '문자열';
-stringVariable = 10;
+let stringVariable = '문자열';
+stringVariable = '문자열';
 
 
 /*
@@ -74,7 +74,7 @@ let union: number | null;
 union = 10;
 union = null;
 // 지정하지 않은 타입 사용으로 에러 뜸
-union = '10';
+// union = '10';
 
 /*
     리터럴 타입
