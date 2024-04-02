@@ -17,7 +17,7 @@ class exportClass {
 /*
     - 하나의 객체로 구성하여 한번에 export 가능
 */
-// export { exportVariable, exportFunction, exportClass };
+export { exportVariable, exportFunction, exportClass };
 
 
 /*
