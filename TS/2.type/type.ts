@@ -84,4 +84,4 @@ let gender: '남' | '여';
 gender = '남';
 gender = '여';
 // 지정한 리터럴 값이 아니므로 에러 뜸
-gender = '남자';
+// gender = '남자';
