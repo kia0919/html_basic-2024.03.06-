@@ -5,10 +5,30 @@
 */
 // let gender: '남' | '여';
 
-//상수는 리터럴값에 의미? 부여할때 자주 사용
 type Gender = '남' | '여';
 let gender: Gender = '남';
 
 type CustomText = string;
+
+// interface King {
+//     name: string;
+//     tombName: string;
+//     birth: string;
+//     death: string;
+// }
+
+type King = {
+    name: string,
+    tombName: string,
+    birth: string,
+    death: string
+};
+
+const taejo: King = {
+    name: '이성계',
+    tombName: '태조',
+    birth: '1335-11-04',
+    death: '1408-06-27'
+};
 
 console.log('==================================================');
