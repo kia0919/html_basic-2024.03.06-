@@ -17,7 +17,7 @@
 // const taejo = new King();
 // console.log(taejo);
 
-console.log('==================================================');
+// console.log('==================================================');
 
 /*
     constructor: 
@@ -37,7 +37,7 @@ class King {
 }
 
 const junjong = new King('이방과', '정종', '1357-07-26', '1419-10-24');
-console.log(junjong);
+// console.log(junjong);
 /*King {
     name: '이방과',
     tombName: '정종',
@@ -45,7 +45,7 @@ console.log(junjong);
     death: '1419-10-24'
   }*/
 
-console.log('==================================================');
+// console.log('==================================================')
 
 /*
     클래스의 필드 선언 : ES6+의 클래스가 가질 수 있는 제어자
@@ -55,26 +55,32 @@ console.log('==================================================');
     - 정적(스테틱) 프라이빗 필드
 */ 
 class Sample1 {
-    // 퍼블릭 필드
+    // 퍼블릭 필드: 클래스 외부에서 사용 가능
     publicField;
-    // 프라이빗 필드
+    // 프라이빗 필드: 클래스 내부에서만 사용 가능
+    // 내부에서 접근을 할려면, class내에서 console.log()에 this.를 사용해 직접 가져와야 출력이 된다.
     #privateField;
-    // 정적 퍼블릭 필드
+    // 정적 퍼블릭 필드: 인스턴스화 없이 접근 가능
     static staticPublicField = '정적 퍼블릭 필드';
-    // 정적 프라이빗 필드
+    // 정적 프라이빗 필드: 클래스 내부에서만 접근 가능
     static #staticPrivateField = '정적 프라이빗 필드';
-
+    
     constructor (publicField, privateField) {
+        // 인스턴스 초기화
         this.publicField = publicField;
         this.#privateField = privateField;
         // this.staticPublicField = publicField;
         // this.#staticPrivateField = privateField;
+
     }
 }
 
+// 초기화가 아닌, Sample1을 호출한것으로 보면 된다.
 const sample1Instance = new Sample1('퍼블릭 필드', '프라이빗 필드');
-
+// sample1은 클래스를 나타내고, publicField는 외부에서 접근이 되므로, 출력이되고, '퍼블릭 필드'가 publicField에 할당이 되므로 Sample1 { publicField: '퍼블릭 필드' }이 출력이 된다,
+// privateField는 내부에서만 접근이 되므로, 출력 되지 않음
 console.log(sample1Instance); // Sample1 { publicField: '퍼블릭 필드' }
+
 // console.log(sample1Instance.#privateField);
 // console.log(sample1Instance.staticPublicField);
 console.log(Sample1.staticPublicField); // 정적 퍼블릭 필드
@@ -187,7 +193,7 @@ console.log(child1Instance.parentField);
 console.log(child1Instance.child1Field);
 // 부모클래스로부터 상속받은 필드를 사용
 // 자식클래스에서 새로 추가한 메서드 사용
-child1Instance.parentMethod();
+child1Instance.parentMethod();7
 child1Instance.child1Method();
 
 // child2Instance 인스턴스 변수 생성
