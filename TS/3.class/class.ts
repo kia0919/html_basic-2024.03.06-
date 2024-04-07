@@ -46,13 +46,14 @@ class Sample3 {
         public publicField: string,
         protected protectedField: string,
         private privateField: string,
-        localVariable: string //접근제어자를 지정하지 않아 매개변수로만 지정이 됨
+        localVariable: string //접근제어자를 앞에서 지정하지 않아 매개변수로만 지정이 됨
     ) {
 
     }
 }
+// localVariable는 매개변수에 접근제어자를 지정하지 않았으므로 클래스의 인스턴스에 속하지 않는다.
 const sample3Instance = new Sample3('publicField', 'protectedField', 'privateField', 'localVariable');
-console.log(sample3Instance);
+console.log(sample3Instance); //Sample3 { publicField: 'publicField'}
 
 console.log('==================================================');
 
@@ -64,11 +65,11 @@ console.log('==================================================');
 */
 
 class Sample4 {
-    
+    // field1은 초기화
     public readonly field1: string = '퍼블릭 읽기 전용 필드1'
     public readonly field2: string;
 
-    constructor (
+    constructor ( // field2, field3는 생성자에서 초기화
         field2: string,
         public readonly field3: string
     ){
@@ -77,7 +78,7 @@ class Sample4 {
 }
 const sample4Instance = new Sample4('퍼블릭 읽기전용 필드2', '퍼블릭 읽기전용 필드3');
 console.log(sample4Instance);
-// sample4Instance.field1 = '변경'    읽기 전용이기에 값을 변경 못함
+// sample4Instance.field1 = '변경' 읽기 전용이기에 값을 변경 못함
 
 
 console.log('==================================================');
@@ -90,6 +91,7 @@ abstract class AbstractClass {
     abstract abstractMethod(arg: string): string; //반환타입이 string
 }
 
+// Abstractclass를 상속 받은 하위 class에서, 추상메서드 구현 가능
 class SubClass extends AbstractClass {
     abstractMethod(arg: string): string {
         return arg;
